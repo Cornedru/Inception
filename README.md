@@ -27,8 +27,8 @@ Each service runs in its own isolated container, communicating through a dedicat
 
 1. Clone the repository:
 ```bash
-git clone <[repository_url](https://github.com/Cornedru/Inception/tree/main)>
-cd inception
+git clone https://github.com/Cornedru/Inception/tree/main && cd inception
+
 ```
 
 2. Configure the `/etc/hosts` file to point your domain to localhost:
