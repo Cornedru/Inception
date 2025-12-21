@@ -1,26 +1,40 @@
 # Inception Project Structure
 
 ```
-inception/
-├── Makefile
-└── srcs/
-    ├── docker-compose.yml
-    ├── .env
-    └── requirements/
-        ├── mariadb/
-        │   ├── Dockerfile
-        │   ├── conf/
-        │   │   └── mariadb.conf
-        │   └── tools/
-        │       └── init.sh
-        ├── wordpress/
-        │   ├── Dockerfile
-        │   └── tools/
-        │       └── init.sh
-        └── nginx/
-            ├── Dockerfile
-            └── conf/
-                └── nginx.conf
+    inception/
+            ├── DEV_DOC.md
+            ├── Makefile
+            ├── ndehmej
+            │   ├── mariadb
+            │   └── wordpress
+            ├── README.md
+            ├── srcs
+            │   ├── docker-compose.yml
+            │   ├── requirements
+            │   │   ├── mariadb
+            │   │   │   ├── conf
+            │   │   │   │   └── my.cnf.d
+            │   │   │   │       └── 50-server.cnf
+            │   │   │   ├── Dockerfile
+            │   │   │   └── tools
+            │   │   │       └── entrypoint.sh
+            │   │   ├── nginx
+            │   │   │   ├── conf
+            │   │   │   │   └── nginx.conf
+            │   │   │   ├── Dockerfile
+            │   │   │   └── tools
+            │   │   └── wordpress
+            │   │       ├── conf
+            │   │       │   └── www.conf
+            │   │       ├── Dockerfile
+            │   │       └── tools
+            │   │           └── entrypoint.sh
+            │   └── secrets
+            │       ├── db_password.txt
+            │       ├── db_root_password.txt
+            │       └── wp_admin_password.txt
+            └── USER_DOC.md
+
 ```
 
 ## Setup Instructions
