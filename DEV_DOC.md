@@ -143,23 +143,41 @@ mysql -h mariadb -u wpuser -p
 ## Project Requirements Checklist
 
 ✅ NGINX with TLSv1.2/TLSv1.3 only
+
 ✅ WordPress + php-fpm (no NGINX)
+
 ✅ MariaDB (no NGINX)
+
 ✅ Volume for WordPress database
+
 ✅ Volume for WordPress files
+
 ✅ Docker network connecting containers
+
 ✅ Containers restart on crash
+
 ✅ No network: host or --link
+
 ✅ No infinite loops (tail -f, sleep infinity, etc.)
+
 ✅ Two WordPress users (admin + regular)
+
 ✅ Admin username doesn't contain "admin"
+
 ✅ Volumes in /home/login/data
+
 ✅ Domain points to local IP
+
 ✅ NGINX is only entrypoint via port 443
+
 ✅ No passwords in Dockerfiles
+
 ✅ Environment variables used
+
 ✅ Custom Dockerfiles (no pre-built images except Alpine/Debian)
+
 ✅ No "latest" tag used
+
 
 ## Architecture
 
