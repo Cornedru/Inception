@@ -1,5 +1,7 @@
 # Inception
 
+*This project has been created as part of the 42 curriculum by ndehmej.*
+
 ## Description
 
 Inception is a system administration and DevOps project that involves setting up a complete web infrastructure using Docker containers. The goal is to virtualize several Docker images by creating them within a personal virtual machine, demonstrating proficiency in containerization, networking, and service orchestration.
@@ -25,8 +27,8 @@ Each service runs in its own isolated container, communicating through a dedicat
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Cornedru/Inception/tree/main && cd inception
-
+git clone <repository_url>
+cd inception
 ```
 
 2. Configure the `/etc/hosts` file to point your domain to localhost:
