@@ -1,3 +1,5 @@
+name: inception
+
 services:
   mariadb:
     container_name: mariadb
@@ -13,7 +15,7 @@ services:
     networks:
       - inception
 
-  wordpress:
+  wordpress: # verifier si erreur en ajoutant un commentaire avec l'user
     container_name: wordpress
     build: requirements/wordpress
     image: wordpress
@@ -26,6 +28,7 @@ services:
       - wordpress_data:/var/www/html
     networks:
       - inception
+      - reverse-proxy
     depends_on:
       - mariadb
 
@@ -36,11 +39,12 @@ services:
     restart: always
     env_file: .env
     ports:
+      - 80:80 # A VOIR
       - "443:443"
     volumes:
       - wordpress_data:/var/www/html
     networks:
-      - inception
+      - reverse-proxy
     depends_on:
       - wordpress
 
@@ -50,16 +54,21 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/ndehmej/data/mariadb
+      device: /home/rems/data/mariadb
+    # name: ?
   wordpress_data:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/ndehmej/data/wordpress
+      device: /home/rems/data/wordpress
+    # name: ?
 
 networks:
   inception:
+    driver: bridge
+    # name: ?
+  reverse-proxy:
     driver: bridge
 
 secrets:

@@ -1,6 +1,6 @@
 NAME = inception
 DOCKER_COMPOSE = ./srcs/docker-compose.yml
-DATA_PATH = /home/ndehmej/data
+DATA_PATH = /home/rems/data
 
 all: up
 
@@ -33,8 +33,8 @@ fclean: clean_data clean
 	@rm -rf $(DATA_PATH)
 
 clean_data:
-	@docker run --rm -v /home/ndehmej/data/mariadb:/clean alpine sh -c "rm -rf /clean/*"
-	@docker run --rm -v /home/ndehmej/data/wordpress:/clean alpine sh -c "rm -rf /clean/*"
+	@docker run --rm -v /home/rems/data/mariadb:/clean alpine sh -c "rm -rf /clean/*"
+	@docker run --rm -v /home/rems/data/wordpress:/clean alpine sh -c "rm -rf /clean/*"
 
 re: clean_data fclean all
 
