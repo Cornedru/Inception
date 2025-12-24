@@ -27,7 +27,7 @@ Each service runs in its own isolated container, communicating through a dedicat
 
 1. Clone the repository:
 ```bash
-git clone <repository_url>
+git clone https://github.com/Cornedru/Inception
 cd inception
 ```
 
