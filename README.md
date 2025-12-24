@@ -72,6 +72,13 @@ make down
 
 ### Cleaning
 
+
+
+To remove all data from maria db & wordpress:
+```bash
+make clean_data
+```
+
 To remove all containers and images:
 ```bash
 make clean
