@@ -27,7 +27,7 @@ clean: down
 
 # Nettoyage TOTAL (Volumes + Fichiers Hôte)
 # C'est ici que la magie opère pour contourner "Permission Denied"
-fclean: clean
+fclean: clean_data clean
 	docker compose -f $(DOCKER_COMPOSE) down -v
 	@docker run --rm -v $(DATA_PATH):/clean alpine sh -c "rm -rf /clean/*" || true
 	@rm -rf $(DATA_PATH)
