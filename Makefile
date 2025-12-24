@@ -36,6 +36,6 @@ clean_data:
 	@docker run --rm -v /home/ndehmej/data/mariadb:/clean alpine sh -c "rm -rf /clean/*"
 	@docker run --rm -v /home/ndehmej/data/wordpress:/clean alpine sh -c "rm -rf /clean/*"
 
-re: fclean all
+re: clean_data fclean all
 
 .PHONY: all up down setup logs clean fclean re
