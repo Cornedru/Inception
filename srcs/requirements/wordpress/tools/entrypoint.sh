@@ -22,7 +22,7 @@ if [ ! -f wp-config.php ]; then
 
     # Installation
     wp core install \
-        --url="$DOMAIN_NAME:4443" \
+        --url="$DOMAIN_NAME" \
         --title=$WP_TITLE \
         --admin_user=$WP_ADMIN_USER \
         --admin_password=$WP_ADMIN_PWD \
@@ -31,8 +31,8 @@ if [ ! -f wp-config.php ]; then
 
     # Création user secondaire (non-admin)
     wp user create $WP_USER $WP_USER_EMAIL --role=author --user_pass=$WP_USER_PWD --allow-root
-	wp option update home "https://${DOMAIN_NAME}:4443" --allow-root
-	wp option update siteurl "https://${DOMAIN_NAME}:4443" --allow-root
+	# wp option update home "https://${DOMAIN_NAME}:4443" --allow-root
+	# wp option update siteurl "https://${DOMAIN_NAME}:4443" --allow-root
 fi
 
 exec "$@"
