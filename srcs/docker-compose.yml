@@ -24,6 +24,7 @@ services:
     secrets:
       - db_password
       - wp_admin_password
+      - wp_user_pwd
     volumes:
       - wordpress_data:/var/www/html
     networks:
@@ -39,7 +40,7 @@ services:
     restart: always
     env_file: .env
     ports:
-      - 80:80 # A VOIR
+      # - 80:80 
       - "443:443"
     volumes:
       - wordpress_data:/var/www/html

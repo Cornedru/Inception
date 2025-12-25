@@ -8,8 +8,6 @@ datadir = /var/lib/mysql
 tmpdir = /tmp
 lc-messages-dir = /usr/share/mysql
 
-# C'EST LA LIGNE IMPORTANTE :
 bind-address = 0.0.0.0
 
-# AJOUTE CELLE-CI POUR ÊTRE SÛR :
 skip-networking = 0

@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Lecture des secrets
 DB_ROOT_PWD=$(cat /run/secrets/db_root_password)
 DB_PWD=$(cat /run/secrets/db_password)
 
@@ -8,7 +7,6 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
     echo "Initializing database..."
     mysql_install_db --user=mysql --datadir=/var/lib/mysql > /dev/null
 
-    # Bootstrap temporaire pour configurer les users
     tfile=`mktemp`
     cat << EOF > $tfile
 USE mysql;
@@ -24,10 +22,8 @@ GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';
 FLUSH PRIVILEGES;
 EOF
     
-    # Exécution du bootstrap en mode silencieux
     /usr/bin/mysqld --user=mysql --bootstrap < $tfile
     rm -f $tfile
 fi
 
-# Exec permet au processus mysqld de devenir PID 1
 exec "$@"
